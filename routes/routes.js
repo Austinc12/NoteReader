@@ -1,18 +1,19 @@
-const fs = require('fs');
+  
+const fs = require("fs");
+var data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
 
-const path = require('path');
 
 module.exports = function(app) {
 
     app.get("/api/notes", function(req, res) {
        
-        res.json(notes);
+        res.json(data);
 
     });
 
     app.get("/api/notes/:id", function(req, res) {
 
-        res.json(notes[Number(req.params.id)]);
+        res.json(data[Number(req.params.id)]);
 
     });
 
@@ -46,19 +47,8 @@ module.exports = function(app) {
             currentNote.id = newId.toString();
             newId++;
         }
-        fs.writeFileSync("./db/db.json", JSON.stringify(notes));
-        res.json(notes);
+        fs.writeFileSync("./db/db.json", JSON.stringify(data));
+        res.json(data);
     }); 
-
-
-
-    
-    app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/index.html"));
-    });
-    
-    app.get("/notes", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/notes.html"));
-    });
 
 }
