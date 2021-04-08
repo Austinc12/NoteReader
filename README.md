@@ -1,0 +1,1 @@
+Are you one of those people like myself that hate writing with a pen and constantly get hand cramps? Well maybe we should eat more potassium and that wouldn't happen so much. Howver if you're anything like me your diet isn't the best so I created an app where you can type all your notes freely! Get rid of those hand cramps and start typing away!
